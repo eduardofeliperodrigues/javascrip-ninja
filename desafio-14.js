@@ -31,10 +31,9 @@
   no console.
   */
   let justMod2Or3 = justNumbers.filter(function(item){
-    if (item % 2 === 0 || item % 3 === 0 ) {
-      return item
-    }
-  })
+    return item % 2 === 0 || item % 3 === 0;
+  });
+
   console.log( '\nJust module of division by 2 or 3:' );
   console.log(justMod2Or3)
 
@@ -47,7 +46,7 @@
   Mostre o resultado no console.
   */
   let operation = justMod2Or3.reduce(function(acumulado, atual) {
-    return acumulado * (atual++)
+    return (acumulado + 1) * atual
   }, 0)
   console.log( '\nOperation:' );
   console.log(operation)
@@ -58,12 +57,10 @@
   console.
   */
   let operation2 = justMod2Or3.reduceRight( function(acumulado, atual) {
-    return acumulado * (atual++)
+    return (acumulado + 1) * atual
   }, 0)
-  console.log( '\nOperation:' );
-  console.log(operation)
   console.log( '\nOperation 2:' );
-  // ?
+  console.log(operation2)
 
   /*
   Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -76,7 +73,7 @@
   let name = ['Edu', 'ar', 'do']
   pname = name.reduce(function(acumulado, atual){
     return acumulado + 'P' + atual;
-  })
+  },'')
   console.log( '\nSeu nome na língua do "P":' );
   console.log(pname)
 
@@ -106,20 +103,31 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  numberObjects.indexOf({ number: 2 }) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+  numberObjects.indexOf({ number: 2 }) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : 
+    console.log('Não existe um objeto { number: 2 } em numberObjects :( - Por valor');
+  //Não é possivel encontrar um objeto pois estamos comparando com um objeto novo, objetos, mesmo que com os mesmos valores, são diferentes.
+
+  let obj = numberObjects[1]
+  numberObjects.indexOf(obj) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects! - Por referencia') : 
+    console.log('Não existe um objeto { number: 2 } em numberObjects :( - Por referencia');
+
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  numberObjects.indexOf({ number: 2 }, -1) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+  numberObjects.indexOf({ number: 2 }, -1) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!- Por valor') : 
+    console.log('Não existe um objeto { number: 2 } em numberObjects :( - Por valor');
+
+  numberObjects.lastIndexOf(obj, 2) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects! - Por referencia') : 
+    console.log('Não existe um objeto { number: 2 } em numberObjects :( - Por referencia');
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
   formato de String.
   */
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-  console.log(Array.isArray(justMod2Or3))
+  console.log(Array.isArray(justMod2Or3), '\n\n')
 
 })();
