@@ -134,7 +134,7 @@
       - "agua_@evida.br.com"
   */
   function isEmailValid(email){
-    let regex = new RegExp('^[\\w.+]+@\\w+\\.\\w{2,}(?:\\.\\w{2})?', 'i');
+    let regex = new RegExp('^[\\w.+]+@\\w+\\.\\w{2,}(?:\\.\\w{2})?$', 'i');
     return regex.test(email)
   }
   
