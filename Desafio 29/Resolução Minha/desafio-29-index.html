@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 29</title>
+    <style>
+        .forms-input{
+            text-align: center;
+            justify-content: space-around;
+            font-size: 10px;
+        }
+        .input{
+            margin-top: 10px;
+        }
+        label{
+            display: block;
+        }
+        h1{
+            font-size: 20px;
+            text-align: center;
+        }
+        .button{
+            margin: 10px auto 30px auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;          
+        }
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 8px;
+            width: 150px;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Veículo</h1>
+    <form class="forms-input" action="">    
+        <div class="input">
+            <label for="imagem">URL Imagem</label>
+            <input type="text" id="imagem" data-js="input-image">
+        </div>
+        <div class="input">
+            <label for="marca">Marca/modelo</label>
+            <input type="text" id="marca" data-js="input-brand">
+        </div>
+        <div class="input">
+            <label for="ano">Ano</label>
+            <input type="text" id="ano" data-js="input-year">
+        </div>
+        <div class="input">
+            <label for="placa">Placa</label>
+            <input type="text" id="placa" data-js="input-license">
+        </div>
+        <div class="input">
+            <label for="cor">Cor</label>
+            <input type="text" id="cor" data-js="input-color">
+        </div>
+        
+        
+    </form>
+
+    <div class="button">
+        <button type="submit" data-js="btnSubmit">Cadastrar Veiculo</button>
+    </div>
+
+    <table>
+        <tbody data-js="vehicles-table">
+            <tr>
+                <th>Link Foto</th>
+                <th>Marca/Modelo</th>
+                <th>Cor</th>
+                <th>Ano</th>
+                <th>Placa</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="desafio-29.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JaCar</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .form {
+            display: flex;
+            text-align: center;
+        }
+        .form-component {
+            width: 100%;
+        }
+        label {
+            display: block;
+        }
+        button {
+            margin-top: 18.4px;
+        }
+        header{
+            text-align: center;
+            margin: 20px auto 20px auto;
+        }
+        span {
+            display: block;
+        }
+        table {
+            margin: 30px auto auto auto;
+            border: .3px solid black;
+            border-collapse: collapse;          
+        }
+        th, td {
+            border: .3px solid black;
+            border-collapse: collapse;
+            font-size: 8px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span data-js="company-name"></span>
+        <span data-js="company-phone"></span>
+    </header>
+
+    <form action="" class="form" data-js="form-resgister">
+        <div  class="form-component">
+            <div>
+                <label>URL Imagem</label>
+                <input type="url" data-js="input-image">
+            </div>
+            <div>
+                <label>Marca/Modelo</label>
+                <input type="text" data-js="input-brand">
+            </div>
+            <div>
+                <label>Ano</label>
+                <input type="text" data-js="input-year">
+            </div>
+        </div>
+        <div class="form-component" >
+            <div>
+                <label>Placa</label>
+                <input type="text" data-js="input-license">
+            </div>
+            <div>
+                <label>Cor</label>
+                <input type="text" data-js="input-color">
+            </div>
+            <div>
+                <button type="submit" data-js="btnSubmit">Cadastrar Veículo</button>
+            </div>
+        </div>
+    </form>
+
+    <table>
+        <thead >
+            <tr>
+                <th>Foto</th>
+                <th>Marca/Modelo</th>
+                <th>Cor</th>
+                <th>Ano</th>
+                <th>Placa</th>
+            </tr>
+        </thead>
+        <tbody data-js="vehicles-table">
+
+        </tbody>
+    </table>
+
+    <script src="desafio-29.js"></script>
+</body>
+</html>
